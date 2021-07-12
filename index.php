@@ -1,37 +1,43 @@
 <?php
 include "include/header.php";
 ?>
-<div class="container">
-    <div class="row ">
-        <div class="col-md-4 login">
-            <?php
-            if(isset($_GET['msg'])){
-                ?>
-                <div class="bg-danger">
-                    <?php echo $_GET['msg'];?>
-                </div>
-                <?php
-            }else{
 
-            }
-            ?>
+<p class="bg-circle-block"></p>
+    <p class="bg-circle-dot"></p>
+<p class="bg-circle-border"></p>
+
+<div class="container index-container">
+    <div class="row login-row">
+        <div class="col-md-6 side-image">
+            <img src="images/login-side-image.png" alt="">
+        </div>
+        <div class="col-md-6 login-form">
+            <div class="side-margin">
+                <h2 class="login-welcome">Welcome!</h2>
+                <?php
+                if(isset($_GET['msg'])){
+                    ?>
+                    <div class="bg-msg">
+                        <?php echo $_GET['msg'];?>
+                    </div>
+                    <?php
+                }else{
+
+                }
+                ?>
                 <form method="post" action="include/log.php">
-                    <label class="login-text">User Name:</label>
-                    <br>
-                    <br>
-                    <input class="input-style" type="text" required name="username" placeholder="Enter Your Username">
-                    <br>
-                    <br>
-                    <label class="login-text">Password:</label>
-                    <br>
-                    <br>
-                    <input class="input-style" required type="password" name="password" placeholder="Enter Your Password">
-                    <br>
-                    <br>
-                    <br>
-                    <input class="login-btn" type="submit" value="Login">
-                    <a href="register.php" class="login-btn" >Register</a>
+                    <div class="input-container">
+                        <i class="fas fa-user icon"></i>
+                        <input class="login-form-text" type="text" required name="username" placeholder="Enter your username">
+                    </div>
+                    <div class="input-container">
+                        <i class="fas fa-key icon"></i>
+                        <input class="login-form-text" required type="password" name="password" placeholder="Enter your password">
+                    </div>
+                    <input class="form-button" type="submit" value="Login">
+                    <button onclick="document.location.href = 'register.php'" class="form-button signup">Signup</button>
                 </form>
+            </div>
         </div>
     </div>
 </div>

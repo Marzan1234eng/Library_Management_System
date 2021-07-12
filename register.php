@@ -56,7 +56,7 @@ include "include/header.php";
                 <br>
                 <br>
                 <input class="register-submit" type="submit" value="Submit">
-                <a href="index.php" class="register-submit" type="submit">Login</a>
+                <a href="index2.php" class="register-submit" type="submit">Login</a>
             </form>
         </div>
     </div>

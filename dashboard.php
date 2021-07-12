@@ -15,7 +15,7 @@ include "include/dashboard-header.php";
 </div>
 <?php
 }else{
-    header("Location: ./index.php");
+    header("Location: ./index2.php");
 }
 ?>
 

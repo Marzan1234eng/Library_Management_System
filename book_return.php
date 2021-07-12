@@ -157,6 +157,6 @@ if(isset($_SESSION["username"])){
     <?php
     $conn->close();
 }else{
-    header("Location: ./index.php");
+    header("Location: ./index2.php");
 }
 ?>
