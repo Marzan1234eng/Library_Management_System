@@ -2,17 +2,16 @@
 session_start();
 if(isset($_SESSION["username"])){
     include "include/header.php";
-    include "include/dashboard-header.php";
     include "include/connection.php";
     ?>
 
     <div style="height: 100%" class="row dashboard-category-row">
-        <?php include "include/dashboard-column.php"?>
+        <?php include "include/dashboard-sidebar.php"?>
 
 
         <div class="col-9 dashboard-right-side">
 
-            <div class="row">
+            <div class="row right-common-row">
                 <div class="col-2"></div>
                 <div class="col-8">
                     <form style="padding-top: 80px;" action="" method="POST">

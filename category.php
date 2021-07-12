@@ -2,15 +2,14 @@
 session_start();
 if(isset($_SESSION["username"])){
 include "include/header.php";
-include "include/dashboard-header.php";
 ?>
 
 <div class="row dashboard-category-row" style="height: 100%; padding: 0">
 
-    <?php include "include/dashboard-column.php"?>
+    <?php include "include/dashboard-sidebar.php"?>
 
     <div class="col-9 dashboard-right-side" style="padding: 0">
-        <div class="row" >
+        <div class="row right-common-row" >
             <div class="col-4"></div>
             <div class="col-4">
 

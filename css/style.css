@@ -199,43 +199,70 @@ html,body{
 /*==============register end================*/
 
 /*==============dashboard start================*/
-.dashboard{
-    background-color: #2B244E;
-    color: #a69cd7;
-    font-size: 35px;
-    font-weight: bold;
-    padding: 20px;
+
+.dash-row{
+    padding: 0;
+    margin: 0 !important;
 }
+
+.dashboard-col{
+    padding: 0 !important;
+    background-color: #005BEA;
+    width: 25%;
+}
+
+.dash-style{
+    width: 100%;
+    padding: 20px 0 20px 18%;
+    position: relative;
+}
+
+.category-icon{
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    top: 33px;
+}
+
+.dash-content{
+    padding-left: 60px!important;
+    font-size: 27px;
+    color: white;
+    text-decoration: none;
+}
+
+.logo-row{
+    width: 100%;
+    margin: 0 !important;
+}
+
+.logo-image{
+    width: 80% !important;
+    margin: auto;
+    padding-top: 25px;
+    padding-bottom: 65px;
+}
+/*==============dashboard end================*/
+
+/*==============dashboard start================*/
 
 .dashboard-category-row{
     display: inline-block;
     height: 100%;
+    margin: 0 !important;
 }
 
-.dashboard-category{
-    background-color: #554A86;
-    color: #cec3ff;
-    font-size: 20px;
-    font-style: oblique;
-}
-
-.dashboard-style{
-    text-align: center;
-    border: 3px solid;
-    padding: 15px 0 15px 25px;
-}
-
-.dash-log{
-    font-size: 20px;
-    text-decoration: none;
-    color: #cec3ff;
-}
 
 /*==============dashboard end================*/
 
 /*==============category start================*/
 
+.right-common-row{
+    margin: 0 !important;
+}
+
 .dashboard-right-side{
+    padding: 0 !important;
     background-image: url("../images/bg.jpg");
     height: auto;
     background-size: cover;
