@@ -20,7 +20,7 @@ VALUES
        ('{$firstname}','{$lastname}','{$email}','{$username}','{$password}')";
 
         if ($conn->query($sql) === TRUE) {
-            header('location:../index2.php?msg=You have registered successfully.');
+            header('location:../register.php?msg=You have registered successfully.');
         } else {
             echo "Error creating database: " . $conn->error;
         }

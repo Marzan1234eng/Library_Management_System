@@ -2,11 +2,14 @@
 include "include/header.php";
 ?>
 
-<p class="bg-circle-block"></p>
-    <p class="bg-circle-dot"></p>
-<p class="bg-circle-border"></p>
 
+
+    <!--<p class="bg-circle-dot"></p>
+    -->
+    <p class="bg-circle-block"></p>
+    <p class="bg-circle-border"></p>
 <div class="container index-container">
+
     <div class="row login-row">
         <div class="col-md-6 side-image">
             <img src="images/login-side-image.png" alt="">

@@ -40,7 +40,7 @@
             <a class="dash-content" href="user_update.php">User Update</a>
         </div>
         <div class="row dash-style">
-            <i class="fas fa-sign-out-alt category-icon"></i>
+            <i class="fas fa-power-off category-icon"></i>
             <a class="dash-content" href="include/logout.php">Logout</a>
         </div>
         <br>
