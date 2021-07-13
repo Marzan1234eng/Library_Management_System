@@ -1,4 +1,3 @@
-
     <div class="col-3 dashboard-col" >
         <div class="row logo-row">
             <img class="logo-image" src="images/Logo.png">

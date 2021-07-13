@@ -9,11 +9,11 @@ include "include/header.php";
     <?php include "include/dashboard-sidebar.php"?>
 
     <div class="col-9 dashboard-right-side">
+        <p class="header-welcome">Welcome To Library Management System</p>
+        <p class="header-book-list">User Profile Update</p>
         <div class="row right-common-row" >
-            <div class="col-2"></div>
-            <div class="col-8">
+            <div class="col-md-12">
                 <form action="include/user_db_conn.php" method="post">
-                    <p class="category-headline">User Update</p>
                     <?php
                     if(isset($_GET['msg'])){
                         ?>
@@ -23,40 +23,55 @@ include "include/header.php";
                         <?php
                     }
                     ?>
-                    <label class="category-label-text">First Name :</label>
-                    <input type="text" name="fname"  placeholder="Enter Your First Name">
-                    <br>
-                    <br>
-                    <label class="category-label-text">Last Name :</label>
-                    <input type="text" name="lname"  placeholder="Enter Your Last Name">
-                    <br>
-                    <br>
-                    <label class="category-label-text">Email :</label>
-                    <input type="email" name="email"  placeholder="Enter Your Email">
-                    <br>
-                    <br>
-                    <label class="category-label-text">User Name :</label>
-                    <input type="text" name="username" required  placeholder="Enter Username For Checking">
-                    <br>
-                    <br>
-                    <label class="category-label-text">Old Password :</label>
-                    <input type="password" name="old_password" required placeholder="Enter Your Password">
-
-                    <br>
-                    <br>
-                    <label class="category-label-text">New Password :</label>
-                    <input type="password" name="password" required placeholder="Enter Your Password">
-
-                    <br>
-                    <br>
-                    <label class="category-label-text">Confirm New Password :</label>
-                    <input type="password" name="confirm_password" required placeholder="Confirm Password">
-                    <br>
-                    <br>
-                    <input class="category-submit" type="submit" name="update" value="Update">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label class="category-label-text">First Name</label>
+                            <br>
+                            <br>
+                            <label class="category-label-text">Last Name</label>
+                            <br>
+                            <br>
+                            <label class="category-label-text">Email</label>
+                            <br>
+                            <br>
+                            <label class="category-label-text">User Name</label>
+                            <br>
+                            <br>
+                            <label class="category-label-text">Old Password</label>
+                            <br>
+                            <br>
+                            <label class="category-label-text">New Password</label>
+                            <br>
+                            <br>
+                            <label class="category-label-text">Confirm New Password</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input class="form-input form-div-input-size" type="text" name="fname"  placeholder="Enter Your First Name">
+                            <br>
+                            <br>
+                            <input class="form-input form-div-input-size" type="text" name="lname"  placeholder="Enter Your Last Name">
+                            <br>
+                            <br>
+                            <input class="form-input form-div-input-size" type="email" name="email"  placeholder="Enter Your Email">
+                            <br>
+                            <br>
+                            <input class="form-input form-div-input-size" type="text" name="username" required  placeholder="Enter Username For Checking">
+                            <br>
+                            <br>
+                            <input class="form-input form-div-input-size" type="password" name="old_password" required placeholder="Enter Your Password">
+                            <br>
+                            <br>
+                            <input class="form-input form-div-input-size" type="password" name="password" required placeholder="Enter Your Password">
+                            <br>
+                            <br>
+                            <input class="form-input form-div-input-size" type="password" name="confirm_password" required placeholder="Confirm Password">
+                            <br>
+                            <br>
+                            <input class="category-submit" type="submit" name="update" value="Update">
+                        </div>
+                    </div>
                 </form>
             </div>
-            <div class="col-2"></div>
         </div>
     </div>
 </div>

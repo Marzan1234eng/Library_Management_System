@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 if(isset($_SESSION["username"])){
     include "include/header.php";
@@ -10,25 +11,34 @@ if(isset($_SESSION["username"])){
 
 
         <div class="col-9 dashboard-right-side">
-
+            <p class="header-welcome">Welcome To Library Management System</p>
+            <p class="header-book-list">Book Return</p>
             <div class="row right-common-row">
-                <div class="col-2"></div>
-                <div class="col-8">
-                    <form style="padding-top: 80px;" action="" method="POST">
+                <div class="col-md-12">
+                    <form action="" method="POST">
                         <?php
                         if(isset($_GET['msg'])){
                             ?>
-                            <div class="bg-danger">
+                            <div class="bg-msg-system">
                                 <?php echo $_GET['msg'];?>
                             </div>
                             <?php
                         }
                         ?>
-                        <label class="category-label-text">Member Email :</label>
-                        <input class="category-input" required name="email" type="text" placeholder="Enter Member Email">
-                        <br>
-                        <br>
-                        <input class="register-submit" type="submit" value="Submit">
+
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label class="category-label-text">Member Email</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input class="form-input form-div-input-size" required name="email" type="text" placeholder="Enter Member Email">
+                                <br>
+                                <br>
+                                <input class="category-submit" type="submit" value="Submit">
+                                <br>
+                                <br>
+                            </div>
+                        </div>
                     </form>
 
                     <?php
@@ -50,8 +60,8 @@ if(isset($_SESSION["username"])){
                                     ?>
                                     <div class="table-responsive">
                                         <div class="table my-custom-scrollbar">
-                                            <table class="table">
-                                                <thead>
+                                            <table class="table table-striped">
+                                                <thead class="search-thread">
                                                 <tr>
                                                     <th scope="col">Member Name</th>
                                                     <th scope="col">Book ID</th>
@@ -85,7 +95,7 @@ if(isset($_SESSION["username"])){
                                                         <td><?php echo $row['book_name']?></td>
                                                         <td><?php echo $row['issue_date']?></td>
                                                         <td>
-                                                            <input class="register-submit" name="return_book" type="submit" value="Return">
+                                                            <input class="category-submit" name="return_book" type="submit" value="Return">
                                                         </td>
                                                         </form>
                                                     </tr>
@@ -149,13 +159,12 @@ if(isset($_SESSION["username"])){
                     }
                     ?>
                 </div>
-                <div class="col-2"></div>
             </div>
         </div>
     </div>
     <?php
     $conn->close();
 }else{
-    header("Location: ./index2.php");
+    header("Location: ./index.php");
 }
 ?>

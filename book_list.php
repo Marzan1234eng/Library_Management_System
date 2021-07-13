@@ -9,6 +9,8 @@ include "include/header.php";
     <?php include "include/dashboard-sidebar.php"?>
 
     <div class="col-9 dashboard-right-side">
+        <p class="header-welcome">Welcome To Library Management System</p>
+        <p class="header-book-list">Book List</p>
         <div class="row right-common-row" >
             <div class="col-2"></div>
             <div class="col-8">

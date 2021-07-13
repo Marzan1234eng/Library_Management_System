@@ -9,12 +9,11 @@ if(isset($_SESSION["username"])){
 
 
         <div class="col-9 dashboard-right-side">
-
+            <p class="header-welcome">Welcome To Library Management System</p>
+            <p class="header-book-list">Add New Member</p>
             <div class="row right-common-row">
-                <div class="col-2"></div>
-                <div class="col-8">
+                <div class="col-md-12">
                     <form method="post" action="include/add_member_db.php">
-                        <p class="category-headline"> Add Member</p>
                         <?php
                         if(isset($_GET['msg'])){
                             ?>
@@ -24,30 +23,43 @@ if(isset($_SESSION["username"])){
                             <?php
                         }
                         ?>
-                        <label class="category-label-text">Name</label>
-                        <input class="category-input" required name="name" type="text" placeholder="Enter your name">
-                        <br>
-                        <br>
-                        <label class="category-label-text">Email</label>
-                        <input class="category-input" required name="email" type="email" placeholder="Enter your email">
-                        <br>
-                        <br>
-                        <label class="category-label-text">Number</label>
-                        <input class="category-input" required name="number" type="number" placeholder="Enter your mobile number">
-                        <br>
-                        <br>
-                        <label class="category-label-text">Date of Birth</label>
-                        <input class="category-input" required name="dob" type="date" placeholder="Enter your birth date">
-                        <br>
-                        <br>
-                        <label class="category-label-text">Blood Group</label>
-                        <input class="category-input" required name="bloodgroup" type="text" placeholder="Enter your blood group">
-                        <br>
-                        <br>
-                        <input class="register-submit" type="submit" value="Submit">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label class="category-label-text">Name</label>
+                                <br>
+                                <br>
+                                <label class="category-label-text">Email</label>
+                                <br>
+                                <br>
+                                <label class="category-label-text">Number</label>
+                                <br>
+                                <br>
+                                <label class="category-label-text">Date of Birth</label>
+                                <br>
+                                <br>
+                                <label class="category-label-text">Blood Group</label>
+                            </div>
+                            <div class="col-md-8">
+                                <input class="form-input form-div-input-size" required name="name" type="text" placeholder="Enter your name">
+                                <br>
+                                <br>
+                                <input class="form-input form-div-input-size" required name="email" type="email" placeholder="Enter your email">
+                                <br>
+                                <br>
+                                <input class="form-input form-div-input-size" required name="number" type="number" placeholder="Enter your mobile number">
+                                <br>
+                                <br>
+                                <input class="form-input form-div-input-size" required name="dob" type="date" placeholder="Enter your birth date">
+                                <br>
+                                <br>
+                                <input class="form-input form-div-input-size" required name="bloodgroup" type="text" placeholder="Enter your blood group">
+                                <br>
+                                <br>
+                                <input class="category-submit" type="submit" value="Submit">
+                            </div>
+                        </div>
                     </form>
                 </div>
-                <div class="col-2"></div>
             </div>
         </div>
     </div>

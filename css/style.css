@@ -17,6 +17,15 @@ html,body{
     width: 90%;
 }
 
+.bg-msg-system{
+    background-color: #005BEA;
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: white;
+    width: 90%;
+}
+
 .bg-circle-block {
     width: 400px;
     height: 400px;
@@ -198,7 +207,7 @@ html,body{
 
 /*==============register end================*/
 
-/*==============dashboard start================*/
+/*============== dashboard-sidebar start================*/
 
 .dash-row{
     padding: 0;
@@ -208,12 +217,12 @@ html,body{
 .dashboard-col{
     padding: 0 !important;
     background-color: #005BEA;
-    width: 25%;
+    width: 20% !important;
 }
 
 .dash-style{
     width: 100%;
-    padding: 20px 0 20px 18%;
+    padding: 20px 0 20px 15%;
     position: relative;
 }
 
@@ -225,8 +234,8 @@ html,body{
 }
 
 .dash-content{
-    padding-left: 60px!important;
-    font-size: 27px;
+    padding-left: 40px!important;
+    font-size: 25px;
     color: white;
     text-decoration: none;
 }
@@ -242,7 +251,8 @@ html,body{
     padding-top: 25px;
     padding-bottom: 65px;
 }
-/*==============dashboard end================*/
+
+/*============== dashboard-sidebar end================*/
 
 /*==============dashboard start================*/
 
@@ -255,15 +265,58 @@ html,body{
 
 /*==============dashboard end================*/
 
+/*==============book_search start============*/
+.header-welcome{
+    font-weight: bold;
+    font-size: 40px;
+    color: #005BEA;
+    width: 100%;
+    padding-top: 40px;
+}
+
+.header-book-list{
+    width: 100%;
+    color: #FFD607;
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 35px;
+}
+
+.form-div-input-size{
+    width: 35% !important;
+}
+
+.form-input{
+    width: 20%;
+    height: 35px;
+    margin-right: 30px;
+}
+
+.form-input::placeholder{
+    text-align: center;
+}
+
+.search-form{
+    padding-bottom: 40px;
+}
+
+.table{
+    vertical-align: baseline !important;
+}
+/*==============book_search end============*/
 /*==============category start================*/
+
+.row{
+    --bs-gutter-x: 0 !important;
+}
 
 .right-common-row{
     margin: 0 !important;
 }
 
 .dashboard-right-side{
-    padding: 0 !important;
-    background-image: url("../images/bg.jpg");
+    width: 100%;
+    padding: 0 0 0 8% !important;
     height: auto;
     background-size: cover;
 }
@@ -285,28 +338,28 @@ html,body{
 
 .category-label-text{
     font-size: 20px;
-    font-weight: bold;
-    color: #0006c0;
-}
-
-.category-input{
-    width: 200px;
-    height: 30px;
+    margin-bottom: 5px;
 }
 
 .category-submit{
-    border: 1px solid #6a60f6;
-    color: aliceblue;
-    border-radius: 5%;
-    padding: 8px 20px;
+    border: none;
+    padding: 6px 35px;
     text-decoration: none;
-    background-color: #77328d;
+    background-color: #FFD607;
     font-weight: bold;
 }
 
 .my-custom-scrollbar {
     position: relative;
-    height: 400px;
+    height: 600px;
     overflow: auto;
+}
+
+tbody, td, tfoot, th, thead, tr {
+    border-style: none !important;
+}
+
+.center{
+    text-align: center;
 }
 /*==============category end================*/

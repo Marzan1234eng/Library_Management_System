@@ -1,55 +1,84 @@
 <?php
+ob_start();
 session_start();
 if(isset($_SESSION["username"])){
 include "include/header.php";
 ?>
 
-<div style="height: 100%" class="row dashboard-category-row">
+<div style="height: 100%" class="row dashboard-category-row" xmlns="http://www.w3.org/1999/html">
     <?php include "include/dashboard-sidebar.php"?>
 
     <div class="col-9 dashboard-right-side">
+        <p class="header-welcome">Welcome To Library Management System</p>
+        <p class="header-book-list">Book Update</p>
         <div class="row right-common-row" >
-            <div class="col-2"></div>
-            <div class="col-8">
+            <div class="col-md-12">
                 <form action="" method="post">
-                    <p class="category-headline">Book Update</p>
-                    <label class="category-label-text">Select Category :</label>
-                    <select name="category">
-                        <?php
-                        include ("include/connection.php");
-                        $sql = "SELECT `name` , cat_auto_id FROM `category`";
-                        $res = $conn->query($sql);
-                        while($row = $res->fetch_assoc()){
-                            ?>
-                            <option value="<?=$row["cat_auto_id"]?>">
-                                <?php echo $row['name']?>
-                            </option>
-                            <?php
-                        }
+                    <?php
+                    if(isset($_GET['msg'])){
                         ?>
-                    </select>
-                    <br>
-                    <br>
-                    <label class="category-label-text">Enter Book Name:</label>
-                    <input type="text" name="name" required placeholder="Enter Book Name">
-                    <br>
-                    <br>
-                    <label class="category-label-text">Enter Writer Name:</label>
-                    <input type="text" name="writer" required placeholder="Enter Writer Name">
-                    <br>
-                    <br>
-                    <label class="category-label-text">Total No of Books:</label>
-                    <input type="text" name="totalbook" required placeholder="Enter Total book">
-                    <br>
-                    <br>
-                    <input class="category-submit" type="submit" value="Update">
+                        <div class="bg-msg-system">
+                            <?php echo $_GET['msg'];?>
+                        </div>
+                        <?php
+                    }
+                    ?>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label class="category-label-text">Select Category</label>
+                            <br>
+                            <br>
+                            <label class="category-label-text">Book Name</label>
+                            <br>
+                            <br>
+                            <label class="category-label-text">Author</label>
+                            <br>
+                            <br>
+                            <label class="category-label-text">In Stock</label>
+                            <br>
+                            <br>
+                            <label class="category-label-text">Description</label>
+                        </div>
+                        <div class="col-md-8">
+                            <select class="form-input form-div-input-size" name="category">
+                                <?php
+                                include ("include/connection.php");
+                                $sql = "SELECT `name` , cat_auto_id FROM `category`";
+                                $res = $conn->query($sql);
+                                while($row = $res->fetch_assoc()){
+                                    ?>
+                                    <option value="" disabled selected hidden>Choose Category</option>
+                                    <option value="<?=$row["cat_auto_id"]?>">
+                                        <?php echo $row['name']?>
+                                    </option>
+                                    <?php
+                                }
+                                ?>
+                            </select>
+                            <br>
+                            <br>
+                            <input class="form-input form-div-input-size" type="text" name="name" required placeholder="Book Name">
+                            <br>
+                            <br>
+                            <input class="form-input form-div-input-size" type="text" name="writer" required placeholder="Author">
+                            <br>
+                            <br>
+                            <input class="form-input form-div-input-size" type="text" name="totalbook" required placeholder="Enter Total book">
+                            <br>
+                            <br>
+                            <textarea rows="8" cols="50" name="description"  placeholder="Write something about the book."></textarea>
+                            <br>
+                            <br>
+                            <input class="category-submit" type="submit" value="Update">
+                        </div>
+                    </div>
                 </form>
-
                 <?php
                 if(isset($_POST['name']) && isset($_POST['writer'])){
                     $name = $_POST['name'];
                     $writer = $_POST['writer'];
                     $totalbook = $_POST['totalbook'];
+                    $description = '';
 
                     $sql = "SELECT * FROM `book` WHERE `name` = '$name' AND `writename` = '$writer'";
                     $res = $conn->query($sql);
@@ -57,31 +86,35 @@ include "include/header.php";
 
                     if ($row > 0){
 
-                        $sql = "UPDATE `book` SET `totalbook`='$totalbook'
+                        if (!empty($_POST['description'])){
+                            $description = $_POST['description'];
+                        }
+                        else{
+                            $res = $res->fetch_assoc();
+                            $description = $res['description'];
+                        }
+
+                        $sql = "UPDATE `book` SET `totalbook`='$totalbook' ,`description` = '$description'
                                 WHERE `name` = '{$name}' AND `writename` = '{$writer}'";
 
-                        if($conn->query($sql) === TRUE){ ?>
-                            <p class="category-headline">Book Updated</p>
-                        <?php
+                        if($conn->query($sql) === TRUE){
+                            header("location:./book_update.php?msg=Book Updated.");
                         } else{
-                        ?>
-                        <p class="category-headline">Book is not found</p>
-                        <?php
-                     }
-                    } else{ ?>
-                        <p class="bg-danger">Book is not found</p>
-                        <?php
+                            header("location:./book_update.php?msg=Book is not found.");
+                        }
+                    }
+                    else{
+                        header("location:./book_update.php?msg=Book is not found.");
                     }
                 }
                 $conn->close();
-                        ?>
+                ?>
             </div>
-            <div class="col-2"></div>
         </div>
     </div>
 </div>
     <?php
 }else{
-    header("Location: ./index2.php");
+    header("Location: ./index.php");
 }
 ?>
