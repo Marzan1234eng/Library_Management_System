@@ -1,10 +1,11 @@
 <?php
 session_start();
 if(isset($_SESSION["username"])){
+    $page = 'add_book';
 include "include/header.php";
 ?>
 
-<div style="height: 100%" class="row dashboard-category-row">
+<div class="row dashboard-category-row">
     <?php include "include/dashboard-sidebar.php"?>
 
     <div class="col-9 dashboard-right-side">
@@ -49,7 +50,7 @@ include "include/header.php";
                                 $res = $conn->query($sql);
                                 while($row = $res->fetch_assoc()){
                                     ?>
-                                    <option value="" disabled selected hidden>Choose Category</option>
+                                    <option value="" hidden selected>Choose...</option>
                                     <option value="<?=$row["cat_auto_id"]?>">
                                         <?php echo $row['name']?>
                                     </option>

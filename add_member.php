@@ -1,6 +1,7 @@
 <?php
 session_start();
 if(isset($_SESSION["username"])){
+    $page = 'add_member';
     include "include/header.php";
     ?>
 

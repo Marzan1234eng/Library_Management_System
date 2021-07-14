@@ -2,10 +2,6 @@
 include "include/header.php";
 ?>
 
-
-
-    <!--<p class="bg-circle-dot"></p>
-    -->
     <p class="bg-circle-block"></p>
     <p class="bg-circle-border"></p>
 <div class="container index-container">

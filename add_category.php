@@ -1,6 +1,7 @@
 <?php
 session_start();
 if(isset($_SESSION["username"])){
+    $page = 'add_category';
 include "include/header.php";
 ?>
 

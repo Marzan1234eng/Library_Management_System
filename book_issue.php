@@ -1,6 +1,7 @@
 <?php
 session_start();
 if(isset($_SESSION["username"])){
+    $page = 'book_issue';
     include "include/header.php";
     include "include/connection.php";
     ?>

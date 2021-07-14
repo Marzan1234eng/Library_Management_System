@@ -2,6 +2,7 @@
 ob_start();
 session_start();
 if(isset($_SESSION["username"])){
+    $page = 'book_search';
 include "include/header.php";
 ?>
 

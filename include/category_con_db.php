@@ -14,14 +14,14 @@ if($row == 0){
     $sql = "INSERT INTO `category`(`name`) VALUES '{$name}'";
 
     if($conn->query($sql) == true){
-        header("location:../category.php?msg=New Category Added.");
+        header("location:../add_category.php?msg=New Category Added.");
     }
     else{
-        header("location:../category.php?msg=Connection Error.");
+        header("location:../add_category.php?msg=Connection Error.");
     }
 }
 else{
-    header("location:../category.php?msg=Category Already Exist.");
+    header("location:../add_category.php?msg=Category Already Exist.");
 }
 
 $conn->close();

@@ -2,6 +2,7 @@
 session_start();
 /* Checking the session*/
 if(isset($_SESSION["username"])){
+    $page = 'user_update';
 include "include/header.php";
 ?>
 
