@@ -1,43 +1,56 @@
+<?php /*echo $_SERVER['REQUEST_URI'];*/?>
+<?php $page = basename($_SERVER['REQUEST_URI']);?>
 
-<div  class="col-3 dashboard-col" >
+<div class="nav-bar">
     <div class="row logo-row">
-        <img class="logo-image" src="images/Logo.png">
+        <div class="col-2">
+            <img class="logo-image" src="images/Logo.png">
+        </div>
+        <?php
+           /* $sql = */
+        ?>
+        <div class="offset-8 col-2 icon-col">
+            <img class="icon-image" src="images/user-icon2.png" alt="user-image">
+        </div>
     </div>
+</div>
+
+<div  class="col-2 dashboard-col">
 
     <ul class="dashboard-ul">
-        <li class="<?php if ($page == 'dashboard') {echo 'active';} ?> dashboard-li">
+        <li class="<?php if ($page == 'dashboard.php') {echo 'active';} ?> dashboard-li">
             <i class="fas fa-history category-icon"></i>
             <a class="dash-content" href="dashboard.php">Dashboard</a>
         </li>
-        <li class="<?php if ($page == 'book_search') {echo 'active';} ?> dashboard-li">
+        <li class="<?php if ($page == 'book_search.php') {echo 'active';} ?> dashboard-li">
             <i class="fas fa-search category-icon"></i>
             <a class="dash-content" href="book_search.php">Book Search</a>
         </li>
-        <li class="<?php if ($page == 'book_issue') {echo 'active';} ?> dashboard-li">
+        <li class="<?php if ($page == 'book_issue.php') {echo 'active';} ?> dashboard-li">
             <i class="far fa-hand-point-right category-icon"></i>
             <a class="dash-content" href="book_issue.php">Book Issue</a>
         </li>
-        <li class="<?php if ($page == 'book_return') {echo 'active';} ?> dashboard-li">
+        <li class="<?php if ($page == 'book_return.php') {echo 'active';} ?> dashboard-li">
             <i class="fas fa-exchange-alt category-icon"></i>
             <a class="dash-content" href="book_return.php">Book Return</a>
         </li>
-        <li class="<?php if ($page == 'book_update') {echo 'active';} ?> dashboard-li">
+        <li class="<?php if ($page == 'book_update.php') {echo 'active';} ?> dashboard-li">
             <i class="fas fa-pen-alt category-icon"></i>
             <a class="dash-content" href="book_update.php">Book Update</a>
         </li>
-        <li class="<?php if ($page == 'add_category') {echo 'active';} ?> dashboard-li">
+        <li class="<?php if ($page == 'add_category.php') {echo 'active';} ?> dashboard-li">
             <i class="fas fa-plus category-icon"></i>
             <a class="dash-content" href="add_category.php">Add Category</a>
         </li>
-        <li class="<?php if ($page == 'add_book') {echo 'active';} ?> dashboard-li">
+        <li class="<?php if ($page == 'add_book.php') {echo 'active';} ?> dashboard-li">
             <i class="fas fa-book category-icon"></i>
             <a class="dash-content" href="add_book.php">Add Book</a>
         </li>
-        <li class="<?php if ($page == 'add_member') {echo 'active';} ?> dashboard-li">
+        <li class="<?php if ($page == 'add_member.php') {echo 'active';} ?> dashboard-li">
             <i class="fas fa-universal-access category-icon"></i>
             <a class="dash-content" href="add_member.php">Add Member</a>
         </li>
-        <li class="<?php if ($page == 'user_update') {echo 'active';} ?> dashboard-li">
+        <li class="<?php if ($page == 'user_update.php') {echo 'active';} ?> dashboard-li">
             <i class="fas fa-users category-icon"></i>
             <a class="dash-content" href="user_update.php">User Update</a>
         </li>

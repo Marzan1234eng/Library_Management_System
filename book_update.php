@@ -2,16 +2,15 @@
 ob_start();
 session_start();
 if(isset($_SESSION["username"])){
-    $page = 'book_update';
 include "include/header.php";
 ?>
 
 <div style="height: 100%" class="row dashboard-category-row" xmlns="http://www.w3.org/1999/html">
     <?php include "include/dashboard-sidebar.php"?>
 
-    <div class="col-9 dashboard-right-side">
-        <p class="header-welcome">Welcome To Library Management System</p>
-        <p class="header-book-list">Book Update</p>
+    <div class="col-10 dashboard-right-side">
+        <h1 class="header-welcome">Welcome To Library Management System</h1>
+        <h2 class="header-book-list">Book Update</h2>
         <div class="row right-common-row" >
             <div class="col-md-12">
                 <form action="" method="post">
@@ -26,19 +25,11 @@ include "include/header.php";
                     ?>
                     <div class="row">
                         <div class="col-md-2">
-                            <label class="category-label-text">Select Category</label>
-                            <br>
-                            <br>
-                            <label class="category-label-text">Book Name</label>
-                            <br>
-                            <br>
-                            <label class="category-label-text">Author</label>
-                            <br>
-                            <br>
-                            <label class="category-label-text">In Stock</label>
-                            <br>
-                            <br>
-                            <label class="category-label-text">Description</label>
+                            <label class="category-label-text"><h5>Select Category</h5></label><br>
+                            <label class="category-label-text"><h5>Book Name</h5></label><br>
+                            <label class="category-label-text"><h5>Author</h5></label><br>
+                            <label class="category-label-text"><h5>In Stock</h5></label><br>
+                            <label class="category-label-text"><h5>Description</h5></label>
                         </div>
                         <div class="col-md-8">
                             <select class="form-input form-div-input-size" name="category">

@@ -1,7 +1,6 @@
 <?php
 session_start();
 if(isset($_SESSION["username"])){
-    $page = 'add_category';
 include "include/header.php";
 ?>
 
@@ -9,9 +8,9 @@ include "include/header.php";
 
     <?php include "include/dashboard-sidebar.php"?>
 
-    <div class="col-9 dashboard-right-side" style="padding: 0">
-        <p class="header-welcome">Welcome To Library Management System</p>
-        <p class="header-book-list">Add New Category</p>
+    <div class="col-10 dashboard-right-side">
+        <h1 class="header-welcome">Welcome To Library Management System</h1>
+        <h2 class="header-book-list">Add New Category</h2>
         <div class="row right-common-row" >
             <div class="col-md-12">
                 <form action="include/category_con_db.php" method="get">
@@ -26,7 +25,7 @@ include "include/header.php";
                     ?>
                     <div class="row">
                         <div class="col-md-2">
-                            <label class="category-label-text">Name</label>
+                            <label class="category-label-text"><h5>Name</h5></label>
                         </div>
                         <div class="col-md-8">
                             <input class="form-input form-div-input-size" type="text" name="name" required placeholder="Enter Category Name">

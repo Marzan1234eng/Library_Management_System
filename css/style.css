@@ -61,8 +61,8 @@ html,body{
 
 .login-row{
     width: 70%;
-    height: 70%;
-    box-shadow: 0 0 20px 20px var(--skyblue);
+    //height: 70%;
+    box-shadow: 0 0 60px 15px var(--skyblue);
     position: fixed;
     top: 50%;
     left: 50%;
@@ -82,14 +82,16 @@ html,body{
 }
 
 .login-form{
+    position: relative;
     background-color: var(--blue);
 }
 
 .side-margin{
-    width: 85%;
-    height: 100%;
-    margin-top: 15%;
-    margin-left: auto;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
 
@@ -102,10 +104,7 @@ html,body{
 
 .input-container {
     position: relative;
-    /*display: block;
-    z-index: 1;*/
     width: 100%;
-    margin-bottom: 15px;
 }
 
 .icon {
@@ -123,24 +122,24 @@ html,body{
 }
 
 .login-form-text{
-    /*z-index: 2;*/
+    margin-bottom: 20px;
+    width: 85%;
     outline: none;
     border: none;
     border-radius: 42px;
-    width: 85%;
     height: 50px;
+    color: var(--black);
     padding-left: 65px;
-    color: #000000;
 }
 
+
 .form-button{
-    margin: 20px 15px 20px 0;
+    margin-right: 15px;
     height: 40px;
     background-color: var(--blue);
     border-radius: 32px;
     border: 1px solid var(--white);
     width: 110px;
-    //margin-right: 15px;
     color: var(--white);
 }
 
@@ -202,9 +201,37 @@ html,body{
 }
 /*==============register end================*/
 
+/*===============Nav-Bar Start=====================*/
+
+.nav-bar{
+    height: 55px !important;
+    background-color: var(--blue);
+}
+
+.logo-row{
+    text-align: center;
+    width: 100%;
+    margin: 0 !important;
+}
+
+.logo-image{
+    width: 150px !important;
+    margin: auto;
+    padding: 10px;
+}
+
+.icon-col{
+    /*float: right;*/
+}
+
+.icon-image{
+    width: 60px;
+    height: 58px;
+    border-radius: 50%;
+}
+
+/*===============Nav-Bar End=====================*/
 /*============== dashboard-sidebar start================*/
-
-
 .dash-row{
     padding: 0;
     margin: 0 !important;
@@ -213,18 +240,19 @@ html,body{
 .dashboard-col{
     padding: 0 !important;
     background-color: var(--blue);
-    width: 20% !important;
 }
 
 
 .dashboard-ul{
+    //position: fixed;
+    //height: calc(100% - 65px);
     padding: 0!important;
-    width: 100%;
     list-style: none;
 }
 
 .dashboard-li{
-    padding: 10px 10px 20px 10px;
+    color: var(--white);
+    padding: 20px 40px;
 }
 
 .active .category-icon{
@@ -250,32 +278,19 @@ html,body{
 
 .category-icon{
     color: var(--white);
-    font-size: 20px;
-    padding-left: 35px;
+    font-size: 15px;
 }
 
 .dashboard-li{
     color: var(--white);
-    padding: 20px;
+    padding: 20px 0 20px 40px;
 }
 .dash-content{
+    padding-left: 10px;
     font-weight: 500;
-    padding-left: 20px!important;
-    font-size: 25px;
+    font-size: 19px;
     color: var(--white);
     text-decoration: none;
-}
-
-.logo-row{
-    width: 100%;
-    margin: 0 !important;
-}
-
-.logo-image{
-    width: 80% !important;
-    margin: auto;
-    padding-top: 25px;
-    padding-bottom: 65px;
 }
 
 /*============== dashboard-sidebar end================*/
@@ -289,16 +304,12 @@ html,body{
 }
 
 .dashboard-category-row-color{
-    width: 100%;
     background-color: #EFEFEF;
-    display: inline-block;
-    height: fit-content;
-    margin: 0 !important;
 }
 
 .dashboard-right-side{
     width: 100%;
-    padding: 0 0 0 4% !important;
+    padding: 0 0 0 3% !important;
     height: auto;
     background-size: cover;
 }
@@ -338,27 +349,15 @@ html,body{
     color: var(--blue);
 }
 
-.member-text{
+.member-color{
+    color: var(--yellow);
     font-size: 20px;
-    color: #50CAFF;
 }
 
 .box-text{
     font-size: 25px;
     padding-left: 25px;
     font-weight: 600;
-}
-
-.percent-color{
-    color: var(--skyblue);
-}
-
-.member-color{
-    color: var(--yellow);
-}
-
-.time-color{
-    color: var(--skyblue);
 }
 
 .dash-two-col{
@@ -391,22 +390,24 @@ html,body{
     height: 280px;
     overflow: auto;
 }
+
+.dash-col-three{
+    margin-bottom: 40px;
+}
 /*==============dashboard end================*/
 
 /*==============book_search start============*/
 .header-welcome{
-    font-weight: 900;
-    font-size: 40px;
     color: var(--black);
     width: 100%;
-    padding-top: 40px;
+    padding-top: 15px;
 }
 
 .header-book-list{
     width: 100%;
     color: var(--yellow);
-    font-size: 35px;
-    font-weight: bold;
+    //font-size: 35px;
+    //font-weight: bold;
     margin-bottom: 35px;
 }
 
@@ -450,8 +451,8 @@ html,body{
 }
 
 .category-label-text{
-    font-size: 20px;
-    margin-bottom: 5px;
+    /*font-size: 20px;*/
+    padding-bottom: 30px;
 }
 
 .category-submit{

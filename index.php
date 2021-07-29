@@ -34,7 +34,7 @@ include "include/header.php";
                         <input class="login-form-text" required type="password" name="password" placeholder="Enter your password">
                     </div>
                     <input class="form-button" type="submit" value="Login">
-                    <button onclick="document.location.href = 'register.php'" class="form-button signup">Signup</button>
+                    <button type="button" onclick="document.location.href = 'register.php'" class="form-button signup">Signup</button>
                 </form>
             </div>
         </div>

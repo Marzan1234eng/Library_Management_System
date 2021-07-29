@@ -2,16 +2,16 @@
 ob_start();
 session_start();
 if(isset($_SESSION["username"])){
-    $page = 'book_search';
 include "include/header.php";
 ?>
 
 <div style="height: 100%" class="row dashboard-category-row">
     <?php include "include/dashboard-sidebar.php"?>
 
-    <div class="col-9 dashboard-right-side">
-        <p class="header-welcome">Welcome To Library Management System</p>
-        <p class="header-book-list">Book List</p>
+    <div class="col-10
+     dashboard-right-side">
+        <h1 class="header-welcome">Welcome To Library Management System</h1>
+        <h2 class="header-book-list">Book List</h2>
         <div class="row right-common-row" >
             <div class="col-md-12">
                 <form class="search-form" action="" method="post">
@@ -32,7 +32,7 @@ include "include/header.php";
                     </select>
                     <input class="form-input" type="text" name="name"  placeholder="Book Name">
                     <input class="form-input" type="text" name="writername"  placeholder="Author">
-                    <input class="category-submit" type="submit" value="Search">
+                    <button class="category-submit" type="submit">Submit</button>
                 </form>
 
                 <?php

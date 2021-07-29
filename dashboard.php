@@ -2,14 +2,13 @@
 session_start();
 /* Checking the session*/
 if(isset($_SESSION["username"])){
-    $page = 'dashboard';
 include "include/header.php";
 ?>
     <div class="row dashboard-category-row-color">
         <?php include "include/dashboard-sidebar.php"?>
 
-        <div class="col-9 dashboard-right-side">
-            <p class="header-welcome">Dashboard</p>
+        <div class="col-10 dashboard-right-side">
+            <h1 class="header-welcome">Dashboard</h1>
             <p class="date_p" id="date"></p>
             <script>
                 document.getElementById("date").innerHTML = Date();
@@ -18,20 +17,20 @@ include "include/header.php";
             <div class="row dash-one-col">
                 <div class="col-md-3 three-box">
                     <p class="dash-position-p week-text">Weekly Activity</p>
-                    <p class="box-text percent-color">75%</p>
+                    <p class="box-text member-color">75%</p>
                 </div>
                 <div class="col-md-3 three-box">
-                    <p class="dash-position-p member-text">Member</p>
+                    <p class="dash-position-p week-text">Member</p>
                     <p class="box-text member-color">365</p>
                 </div>
                 <div class="col-md-3 three-box-three">
                     <p class="dash-position-p week-text">Time</p>
-                    <p class="box-text time-color">10:00 AM</p>
+                    <p class="box-text member-color">10:00 AM</p>
                 </div>
 
                 <div class="row dash-two-col">
                     <div class="col-md-7 box-two-book">
-                        <p class="dash-position-p member-text">Book List</p>
+                        <p class="dash-position-p week-text">Book List</p>
                         <div class="table-responsive dash-tab-margin" >
                             <div class="table my-custom-scrollbar-dash" >
                                 <table class="table table-striped">
@@ -114,7 +113,7 @@ include "include/header.php";
                             typeface without relying on meaningful content.</p>
                     </div>
                     <div class="col-md-4 box-two-category" style="height: 200px!important; width: 40%!important;">
-                        <p class="dash-position-p member-text">Damage Criteria</p>
+                        <p class="dash-position-p week-text">Damage Criteria</p>
                         <p class="dash-position-p">In publishing and graphic design, Lorem ipsum is a
                             placeholder text commonly used to demonstrate
                             visual form of a document or a t</p>
@@ -125,10 +124,9 @@ include "include/header.php";
     </div>
 <?php
 }else{
-    header("Location: ./index2.php");
+    header("Location: ./index.php");
 }
 ?>
-
 
 
 

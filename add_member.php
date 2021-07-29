@@ -1,7 +1,6 @@
 <?php
 session_start();
 if(isset($_SESSION["username"])){
-    $page = 'add_member';
     include "include/header.php";
     ?>
 
@@ -9,9 +8,9 @@ if(isset($_SESSION["username"])){
         <?php include "include/dashboard-sidebar.php"?>
 
 
-        <div class="col-9 dashboard-right-side">
-            <p class="header-welcome">Welcome To Library Management System</p>
-            <p class="header-book-list">Add New Member</p>
+        <div class="col-10 dashboard-right-side">
+            <h1 class="header-welcome">Welcome To Library Management System</h1>
+            <h2 class="header-book-list">Add New Member</h2>
             <div class="row right-common-row">
                 <div class="col-md-12">
                     <form method="post" action="include/add_member_db.php">
@@ -26,19 +25,11 @@ if(isset($_SESSION["username"])){
                         ?>
                         <div class="row">
                             <div class="col-md-2">
-                                <label class="category-label-text">Name</label>
-                                <br>
-                                <br>
-                                <label class="category-label-text">Email</label>
-                                <br>
-                                <br>
-                                <label class="category-label-text">Number</label>
-                                <br>
-                                <br>
-                                <label class="category-label-text">Date of Birth</label>
-                                <br>
-                                <br>
-                                <label class="category-label-text">Blood Group</label>
+                                <label class="category-label-text"><h5>Name</h5></label><br>
+                                <label class="category-label-text"><h5>Email</h5></label><br>
+                                <label class="category-label-text"><h5>Number</h5></label><br>
+                                <label class="category-label-text"><h5>Date of Birth</h5></label><br>
+                                <label class="category-label-text"><h5>Blood Group</h5></label>
                             </div>
                             <div class="col-md-8">
                                 <input class="form-input form-div-input-size" required name="name" type="text" placeholder="Enter your name">

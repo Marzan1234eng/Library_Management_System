@@ -2,7 +2,6 @@
 ob_start();
 session_start();
 if(isset($_SESSION["username"])){
-    $page = 'book_return';
     include "include/header.php";
     include "include/connection.php";
     ?>
@@ -11,9 +10,9 @@ if(isset($_SESSION["username"])){
         <?php include "include/dashboard-sidebar.php"?>
 
 
-        <div class="col-9 dashboard-right-side">
-            <p class="header-welcome">Welcome To Library Management System</p>
-            <p class="header-book-list">Book Return</p>
+        <div class="col-10 dashboard-right-side">
+            <h1 class="header-welcome">Welcome To Library Management System</h1>
+            <h2 class="header-book-list">Book Return</h2>
             <div class="row right-common-row">
                 <div class="col-md-12">
                     <form action="" method="POST">
@@ -29,7 +28,7 @@ if(isset($_SESSION["username"])){
 
                         <div class="row">
                             <div class="col-md-2">
-                                <label class="category-label-text">Member Email</label>
+                                <label class="category-label-text"><h5>Member Email</h5></label>
                             </div>
                             <div class="col-md-8">
                                 <input class="form-input form-div-input-size" required name="email" type="text" placeholder="Enter Member Email">
