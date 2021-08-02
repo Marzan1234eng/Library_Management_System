@@ -2,10 +2,13 @@
 include "include/header.php";
 ?>
 
-    <p class="bg-circle-block"></p>
-    <p class="bg-circle-border"></p>
-<div class="container index-container">
+    <!--<p class="bg-circle-block"></p>
+    <p class="bg-circle-border"></p>-->
 
+
+<div class="index-container">
+
+    <img class="bg-image-1" src="images/Ellipse 2.png" alt="ellipse-background-image">
     <div class="row login-row">
         <div class="col-md-6 side-image">
             <img src="images/login-side-image.png" alt="">
@@ -39,6 +42,7 @@ include "include/header.php";
             </div>
         </div>
     </div>
+    <img class="bg-image-2" src="images/Ellipse 1.png" alt="ellipse-background-image">
 </div>
 
 <?php

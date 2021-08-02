@@ -13,6 +13,7 @@ html,body{
     --black: #000000;
 }
 /*==============index start=====================*/
+
 .bg-msg{
     background-color: var(--skyblue);
     font-size: 20px;
@@ -31,7 +32,7 @@ html,body{
     width: 90%;
 }
 
-.bg-circle-block {
+/*.bg-circle-block {
     width: 30%;
     height: 60%;
     border-radius: 50%;
@@ -50,23 +51,39 @@ html,body{
     border-radius: 50%;
     top: 60%;
     left: -5%;
-}
+}*/
 
 .index-container{
-    padding-top: 100px;
+    position: relative;
+    //padding-top: 100px;
     width: 100%;
     height: 100%;
-    position: relative;
+    //position: relative;
+}
+
+.bg-image-1{
+    position: absolute;
+    width: 25%;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.bg-image-2{
+    position: absolute;
+    width: 25%;
+    bottom: 0;
+    z-index: 1;
 }
 
 .login-row{
     width: 70%;
-    //height: 70%;
     box-shadow: 0 0 60px 15px var(--skyblue);
-    position: fixed;
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 2;
 }
 
 .side-image{
@@ -123,7 +140,6 @@ html,body{
 
 .login-form-text{
     margin-bottom: 20px;
-    width: 85%;
     outline: none;
     border: none;
     border-radius: 42px;
