@@ -32,33 +32,12 @@ html,body{
     width: 90%;
 }
 
-/*.bg-circle-block {
-    width: 30%;
-    height: 60%;
-    border-radius: 50%;
-    background: var(--skyblue);
-    position: fixed;
-    top: -30%;
-    left: 75%;
-}
-
-.bg-circle-border{
-    position: fixed;
-    overflow: auto;
-    width: 30%;
-    height: 60%;
-    border: 50px solid var(--blue);
-    border-radius: 50%;
-    top: 60%;
-    left: -5%;
-}*/
 
 .index-container{
     position: relative;
-    //padding-top: 100px;
     width: 100%;
     height: 100%;
-    //position: relative;
+    display: inline-block;
 }
 
 .bg-image-1{
@@ -220,6 +199,7 @@ html,body{
 /*===============Nav-Bar Start=====================*/
 
 .nav-bar{
+    position: fixed;
     height: 55px !important;
     background-color: var(--blue);
 }
@@ -349,7 +329,7 @@ html,body{
 .dashboard-ul{
     //position: fixed;
     //height: calc(100% - 65px);
-    padding: 0!important;
+    padding: 55px 0 0 0!important;
     list-style: none;
 }
 
@@ -412,7 +392,7 @@ html,body{
 
 .dashboard-right-side{
     width: 100%;
-    padding: 0 0 0 3% !important;
+    padding: 65px 0 0 3% !important;
     height: auto;
     background-size: cover;
 }

@@ -14,40 +14,50 @@ if(isset($_SESSION["username"])){
             <h2 class="header-book-list">Book Issue</h2>
             <div class="row right-common-row">
                 <div class="col-12">
-                    <form action="include/book_issue_db.php" method="POST">
-                        <?php
-                        if(isset($_GET['msg'])){
-                            ?>
-                            <div class="bg-msg-system">
-                                <?php echo $_GET['msg'];?>
-                            </div>
-                            <?php
-                        }
-                        ?>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <label class="category-label-text"><h5>Member Email</h5></label>
-                                <label class="category-label-text"><h5>Book ID</h5></label>
-                            </div>
-                            <div class="col-md-8">
-                                <input class="form-input form-div-input-size" required name="email" type="text" placeholder="Enter Member Email">
-                                <br>
-                                <br>
-                                <input class="form-input form-div-input-size" required name="b_id" type="text" placeholder="Enter Book ID: ">
-                                <br>
-                                <br>
-                                <input class="category-submit" type="submit" value="Submit">
-                            </div>
-                        </div>
-                    </form>
+                    <div id="bg-msg" class="bg-msg-system"></div>
 
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label class="category-label-text"><h5>Member Email</h5></label>
+                            <label class="category-label-text"><h5>Book ID</h5></label>
+                        </div>
+                        <div class="col-md-8">
+                            <input id="email" class="form-input form-div-input-size" required name="email" type="text" placeholder="Enter Member Email">
+                            <br>
+                            <br>
+                            <input id="bookId" class="form-input form-div-input-size" required name="b_id" type="text" placeholder="Enter Book ID: ">
+                            <br>
+                            <br>
+                            <button id="submitButton" class="category-submit">Submit</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <script type="application/javascript">
+        var btn = document.getElementById("submitButton");
+        var bgMsg = document.getElementById("bg-msg");
+
+        btn.onclick = function (){
+            let email = document.getElementById("email").value;
+            let bookId = document.getElementById("bookId").value;
+
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.onreadystatechange = function() {
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+                {
+                    bgMsg.innerHTML = xmlHttp.responseText;
+                }
+            }
+
+            xmlHttp.open("POST", "include/book_issue_db.php"); // true for asynchronous
+            xmlHttp.send(JSON.stringify({email: email , bookId: bookId}));
+        }
+    </script>
     <?php
 }else{
-    header("Location: ./index2.php");
+    header("Location: ./index.php");
 }
 ?>

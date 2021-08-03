@@ -47,6 +47,19 @@ if(isset($_SESSION["username"])){
                             $email = $_POST['email'];
 
                             $sql = "SELECT * FROM `member` WHERE `email` = '$email'"; /*To Know the member*/
+
+                            include "include/connection.php";
+                            /*$servername = "localhost";
+                            $serverUsername = "root";
+                            $password = "";
+                            $database = "library_management_system";
+
+                            $conn = mysqli_connect($servername,$serverUsername,$password,$database);
+
+// Check connection
+                            if (!$conn) {
+                                die("Connection failed: " . mysqli_connect_error());
+                            }*/
                             $result = $conn->query($sql);
 
                             if($result->num_rows > 0){   /*Check member is exist or not*/
@@ -123,6 +136,7 @@ if(isset($_SESSION["username"])){
                         $totalbook = $_POST['totalbook'] + 1;
 
                         $sql = "SELECT * FROM book_issue WHERE b_id = '$b_id'"; /*to get the expire date to check any fine*/
+                        include "include/connection.php";
                         $result = $conn->query($sql);
                         $row = $result->fetch_assoc();
 
@@ -163,6 +177,7 @@ if(isset($_SESSION["username"])){
         </div>
     </div>
     <?php
+    include "include/connection.php";
     $conn->close();
 }else{
     header("Location: ./index.php");
