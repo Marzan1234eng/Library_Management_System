@@ -2,8 +2,15 @@
 session_start();
 include "connection.php";
 
-$id = $_GET['id'];
-$name = $_GET['name'];
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: *");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+
+$inputJSON = file_get_contents('php://input');
+
+$input = json_decode($inputJSON, TRUE);
+
+$name = $input['name'];
 
 $sql = "SELECT * FROM `category` WHERE `name` = '{$name}' ";
 $res = $conn->query($sql);
@@ -14,14 +21,18 @@ if($row == 0){
     $sql = "INSERT INTO `category`(`name`) VALUES '{$name}'";
 
     if($conn->query($sql) == true){
-        header("location:../add_category.php?msg=New Category Added.");
+        echo "hello";
+        //header("location:../add_category.php?msg=New Category Added.");
+        print ("New Category Added.");
     }
     else{
-        header("location:../add_category.php?msg=Connection Error.");
+        //header("location:../add_category.php?msg=Connection Error.");
+        print ("Connection Error.");
     }
 }
 else{
-    header("location:../add_category.php?msg=Category Already Exist.");
+    //header("location:../add_category.php?msg=Category Already Exist.");
+    print ("Category Already Exist.");
 }
 
 $conn->close();

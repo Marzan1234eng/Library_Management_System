@@ -1,15 +1,21 @@
 <?php
 session_start();
+include ("connection.php");
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: *");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 
-include "connection.php";
+$inputJSON = file_get_contents('php://input');
 
-$fname = $_POST['fname'];
-$lname = $_POST['lname'];
-$email = $_POST['email'];
-$username = $_POST['username'];
-$oldPassword = $_POST['old_password'];
-$newPassword = $_POST['password'];
-$confirmPassword = $_POST['confirm_password'];
+$input = json_decode($inputJSON, TRUE);
+
+$fname = $input['fname'];
+$lname = $input['lname'];
+$email = $input['email'];
+$username = $input['username'];
+$oldPassword = $input['old_password'];
+$newPassword = $input['password'];
+$confirmPassword = $input['confirm_password'];
 
 $session_UserName = $_SESSION['username'];
 if($username == $session_UserName){
@@ -34,25 +40,30 @@ if($username == $session_UserName){
 WHERE `username` = '$username'";
 
                 if ($conn->query($sql) == true){
-                    header("location:../user_update.php?msg=User Updated");
+                   // header("location:../user_update.php?msg=User Updated");
+                    print ("User Updated");
                 }
             }
             else{
-                header("location:../user_update.php?msg=Password Do Not Match");
+               // header("location:../user_update.php?msg=Password Do Not Match");
                 //echo "Password Do Not Match";
+                print ("Password Do Not Match");
             }
         }
         else{
-            header("location:../user_update.php?msg=Incorrect Password");
+           // header("location:../user_update.php?msg=Incorrect Password");
             //echo "Incorrect Password";
+            print ("Incorrect Password");
         }
     }else{
-        header("location:../user_update.php?msg=Wrong User Name");
+        //header("location:../user_update.php?msg=Wrong User Name");
        // echo "Wrong User Name";
+        print ("Incorrect Password");
     }
 }else{
-    header("location:../user_update.php?msg=Wrong User Name");
+    //header("location:../user_update.php?msg=Wrong User Name");
     //echo "Wrong User Name";
+    print ("Wrong User Name");
 }
 
 

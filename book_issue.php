@@ -22,10 +22,10 @@ if(isset($_SESSION["username"])){
                             <label class="category-label-text"><h5>Book ID</h5></label>
                         </div>
                         <div class="col-md-8">
-                            <input id="email" class="form-input form-div-input-size" required name="email" type="text" placeholder="Enter Member Email">
+                            <input id="email" class="form-input form-div-input-size" required type="text" placeholder="Enter Member Email">
                             <br>
                             <br>
-                            <input id="bookId" class="form-input form-div-input-size" required name="b_id" type="text" placeholder="Enter Book ID: ">
+                            <input id="bookId" class="form-input form-div-input-size" required type="text" placeholder="Enter Book ID: ">
                             <br>
                             <br>
                             <button id="submitButton" class="category-submit">Submit</button>

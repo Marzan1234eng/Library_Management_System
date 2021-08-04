@@ -2,6 +2,7 @@
 session_start();
 if(isset($_SESSION["username"])){
 include "include/header.php";
+include "include/connection.php";
 ?>
 
 <div class="row dashboard-category-row">
@@ -12,16 +13,9 @@ include "include/header.php";
         <h2 class="header-book-list">Add New Book</h2>
         <div class="row right-common-row" >
             <div class="col-md-12">
-                <form id="demo" method="post" action="" enctype="multipart/form-data">
-                    <?php
-                    if(isset($_GET['msg'])){
-                        ?>
-                        <div id="demo" class="bg-msg-system">
-                            <?php echo $_GET['msg'];?>
-                        </div>
-                        <?php
-                    }
-                    ?>
+
+                <form action="" method="post" enctype="multipart/form-data">
+                    <div id="bg-msg" class="bg-msg-system"></div>
                     <div class="row">
                         <div class="col-md-2">
                             <label class="category-label-text"><h5>Select Category</h5></label>
@@ -32,7 +26,7 @@ include "include/header.php";
                             <label class="category-label-text"><h5>Description</h5></label>
                         </div>
                         <div class="col-md-8">
-                            <select class="form-input form-div-input-size" name="category">
+                            <select id="category" class="form-input form-div-input-size" name="category">
                                 <?php
                                 include ("include/connection.php");
                                 $sql = "SELECT `name` , cat_auto_id FROM `category`";  /*To Print Book All Category*/
@@ -49,44 +43,61 @@ include "include/header.php";
                             </select>
                             <br>
                             <br>
-                            <input class="form-input form-div-input-size" type="text" name="name" required placeholder="Enter Book Name">
+                            <input id="name" class="form-input form-div-input-size" type="text" required placeholder="Enter Book Name">
                             <br>
                             <br>
-                            <input type="file" name="image">
+                            <input id="image" type="file" name="image">
                             <br
                             ><br>
-                            <input class="form-input form-div-input-size" type="text" name="writerName" required placeholder="Enter Book Name">
+                            <input id="writerName" class="form-input form-div-input-size" type="text" required placeholder="Enter Book Name">
                             <br>
                             <br>
-                            <input class="form-input form-div-input-size" type="text" name="totalBook" required placeholder="Enter Total Books">
+                            <input id="totalBook" class="form-input form-div-input-size" type="text" required placeholder="Enter Total Books">
                             <br>
                             <br>
-                            <textarea rows="8" cols="50" type="text" name="description"  placeholder="Enter Book Description"></textarea>
+                            <textarea id="description" rows="8" cols="50" type="text" placeholder="Enter Book Description"></textarea>
                             <br>
                             <br>
-                            <button class="category-submit request-callback" onclick="window.open('include/add_book_db.php')">Submit</button>
+                            <button id="submitButton" class="category-submit">Submit</button>
+                            <!--<input id="submitButton" class="category-submit" type="submit" value="Submit">-->
+                            <br>
+                            <br>
                         </div>
                     </div>
                 </form>
+
+
             </div>
         </div>
     </div>
 </div>
 
-    <script>
-        function loadDoc(){
-            var http = new XMLHttpRequest();
-            const url = "include/add_book_db.php";
-            http.open("POST",url);
-            http.send();
+    <script type="application/javascript">
+        var btn = document.getElementById("submitButton");
+        var bgMsg = document.getElementById("bg-msg");
 
-            http.onreadystatechange=function (){
-                if(this.readyState === 4 && this.status === 200){
-                    console.log(http.responseText);
+        btn.onclick = function (){
+            let category = document.getElementById("category").value;
+            let name = document.getElementById("name").value;
+            let image = document.getElementById("image").value;
+            let writerName = document.getElementById("writerName").value;
+            let totalBook = document.getElementById("totalBook").value;
+            let description = document.getElementById("description").value;
+
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.onreadystatechange = function() {
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+                {
+                    bgMsg.innerHTML = xmlHttp.responseText;
                 }
             }
-        }
 
+            xmlHttp.open("POST", "include/add_book_db.php"); // true for asynchronous
+            xmlHttp.send(JSON.stringify(
+                {
+                    category: category , name: name, image: image, writerName: writerName, totalBook: totalBook, description: description
+                }));
+        }
     </script>
     <?php
 }else{

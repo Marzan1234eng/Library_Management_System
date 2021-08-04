@@ -1,12 +1,19 @@
 <?php
 
-include "connection.php";
+include ("connection.php");
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: *");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 
-$name = $_POST['name'];
-$email = $_POST['email'];
-$number = $_POST['number'];
-$dob = $_POST['dob'];
-$bloodgroup = $_POST['bloodgroup'];
+$inputJSON = file_get_contents('php://input');
+
+$input = json_decode($inputJSON, TRUE);
+
+$name = $input['name'];
+$email = $input['email'];
+$number = $input['number'];
+$dob = $input['dob'];
+$bloodgroup = $input['bloodgroup'];
 
 $sql = "SELECT * FROM `member` WHERE `email` = '{$email}' OR `number` = '{$number}'";
 $result = $conn->query($sql);
@@ -15,17 +22,17 @@ if ($conn->query($sql) == true) {
 
     $row = $result->fetch_assoc();
 
-    if ($email == !$row['email'] && $number == !$row['number']) {
-
+    if (isset($row['email']) && isset($row['number'])){
+        print ("Member Already Exists.");
+    }else{
         $sql = "INSERT INTO member (`name` ,`email` ,`number`, `dob`, `blood-group`) 
-VALUES 
-       ('$name','$email','$number','$dob','$bloodgroup')";
+                                        VALUES 
+                           ('$name','$email','$number','$dob','$bloodgroup')";
         $conn->query($sql);
-        header("location:../add_member.php?msg=Member Added");
+        //header("location:../add_member.php?msg=Member Added");
+        print ("Member Added");
     }
-    else{
-        header("location:../add_member.php?msg=Member Already Exists");
-    }
+
 }else {
     die("Connection failed: " . mysqli_connect_error());
 }
