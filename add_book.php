@@ -14,7 +14,7 @@ include "include/connection.php";
         <div class="row right-common-row" >
             <div class="col-md-12">
 
-                <form action="" method="post" enctype="multipart/form-data">
+                <form id="frmData" action="" method="post" enctype="multipart/form-data">
                     <div id="bg-msg" class="bg-msg-system"></div>
                     <div class="row">
                         <div class="col-md-2">
@@ -78,11 +78,14 @@ include "include/connection.php";
 
         btn.onclick = function (){
             let category = document.getElementById("category").value;
-            let name = document.getElementById("name").value;
-            let image = document.getElementById("image").value;
+            let name = document.getElementById("name").;
+            var image    = document.querySelector('input[type=file]').files[0];
+            //let image = document.getElementById("image").value;
             let writerName = document.getElementById("writerName").value;
             let totalBook = document.getElementById("totalBook").value;
             let description = document.getElementById("description").value;
+
+            //let image = new FormData(document.getElementById('frmData'));
 
             var xmlHttp = new XMLHttpRequest();
             xmlHttp.onreadystatechange = function() {

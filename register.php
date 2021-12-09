@@ -24,33 +24,35 @@ include "include/header.php";
 
                     }
                     ?>
-                    <form method="post" action="./include/reg-db.php">
-                        <div class="input-container">
+                    <form class="text-start"  method="post" action="./include/reg-db.php">
+                        <div class="input-container" >
                             <i class="fas fa-chevron-circle-right register-icon"></i>
-                            <input class="login-form-text" required name="firstname" type="text" placeholder="Enter your first name">
+                            <input class="signUp-form" required name="firstname" type="text" placeholder="Enter your first name">
                         </div>
                         <div class="input-container">
                             <i class="fas fa-chevron-circle-right register-icon"></i>
-                            <input class="login-form-text" required name="lastname" type="text" placeholder="Enter your last name">
+                            <input class="signUp-form" required name="lastname" type="text" placeholder="Enter your last name">
                         </div>
                         <div class="input-container">
                             <i class="fas fa-chevron-circle-right register-icon"></i>
-                            <input class="login-form-text" required name="email" type="email" placeholder="Enter your email">
+                            <input class="signUp-form" required name="email" type="email" placeholder="Enter your email">
                         </div>
                         <div class="input-container">
                             <i class="fas fa-chevron-circle-right register-icon"></i>
-                            <input class="login-form-text" required name="username" type="text" placeholder="Enter your username">
+                            <input class="signUp-form" required name="username" type="text" placeholder="Enter your username">
                         </div>
                         <div class="input-container">
                             <i class="fas fa-chevron-circle-right register-icon"></i>
-                            <input class="login-form-text" required name="password" type="password" placeholder="Enter password">
+                            <input class="signUp-form" required name="password" type="password" placeholder="Enter password">
                         </div>
                         <div class="input-container">
                             <i class="fas fa-chevron-circle-right register-icon"></i>
-                            <input class="login-form-text" required name="confirmPassword" type="password" placeholder="Confirm Password">
+                            <input class="signUp-form" required name="confirmPassword" type="password" placeholder="Confirm Password">
                         </div>
-                        <input class="form-button" type="submit" value="Submit">
-                        <button onclick="document.location.href = 'index.php'" class="form-button signup">Cancel</button>
+                        <div class="d-flex justify-content-center">
+                            <input class="form-button" type="submit" value="Submit">
+                            <button onclick="document.location.href = 'index.php'" class="form-button signup">Cancel</button>
+                        </div>
                     </form>
                 </div>
             </div>

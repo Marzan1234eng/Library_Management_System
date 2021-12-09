@@ -11,9 +11,9 @@ $input = json_decode($inputJSON, TRUE);
 $category = $input['category'];
 $name = $input['name'];
 
-/*$image = $_FILES['image']['name'];
+$image = $_FILES['image']['name'];
 // image file directory
-$target = "../images/".basename($image);*/
+$target = "../images/".basename($image);
 
 $writeName = $input['writerName'];
 $description = $input['description'];
@@ -29,12 +29,12 @@ if(isset($row['name']))
 
 if($old_name != $name){   /*checking if there is any same name book*/
 
-    $sql = "INSERT INTO `book`( `category`, `name`,  `writename`, `description`, `totalbook`) 
+    $sql = "INSERT INTO `book`( `category`, `name`, `image`  `writename`, `description`, `totalbook`) 
 VALUES 
-       ('$category','$name', '$writeName','$description','$totalBook')";
+       ('$category','$name', '$image', '$writeName','$description','$totalBook')";
 
     if ($conn->query($sql) == true){
-        //move_uploaded_file($_FILES['image']['tmp_name'], $target);
+        move_uploaded_file($_FILES['image']['tmp_name'], $target);
         //header('location:../add_book.php?msg=New Book Added.');
         print ("New Book Added.");
     }

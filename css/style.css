@@ -34,10 +34,10 @@ html,body{
 
 
 .index-container{
-    position: relative;
+    /*position: relative;*/
     width: 100%;
     height: 100%;
-    display: inline-block;
+    /*display: inline-block;*/
 }
 
 .bg-image-1{
@@ -67,14 +67,20 @@ html,body{
 
 .side-image{
     padding: 0;
-    height: 100%;
+    /*height: 100%;*/
     margin: auto;
-    display: block;
+    /*display: block;*/
     background-color: var(--white);
 }
 .side-image img{
     width: 100%;
     height: 100%;
+}
+
+@media only screen and (max-width: 425px){
+    .side-image img{
+
+    }
 }
 
 .login-form{
@@ -95,7 +101,7 @@ html,body{
     color: var(--white);
     font-size: 36px;
     font-weight: bold;
-    padding-bottom: 32px;
+    /*padding-bottom: 32px;*/
 }
 
 .input-container {
@@ -115,6 +121,17 @@ html,body{
 .login-form-text::placeholder{
     font-size: 15px;
     color: var(--skyblue);
+}
+
+.signUp-form{
+    width: 80%;
+    margin-bottom: 20px;
+    outline: none;
+    border: none;
+    border-radius: 42px;
+    height: 50px;
+    color: var(--black);
+    padding-left: 65px;
 }
 
 .login-form-text{
